@@ -1,0 +1,11 @@
+.navigation {
+  border-bottom: 1px solid goldenrod;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+
+  p {
+    cursor: pointer;
+    margin: 0 20px 18px;
+  }
+}
