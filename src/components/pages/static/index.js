@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'next-routes'
 import MenuItems from './MenuItems'
+import ItemsContext from '../index'
 
-const StaticPages = ({ category, path }) => {
+const StaticPages = ({ path }) => {
   return (
     <>
       {/* {/\//.test(path) && <Link route='post' params={{ handle: 'hi' }}><p>Main page</p></Link>} */}

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect, useContext } from 'react'
+import Item from './Item'
+import { ItemsContext } from '../../index'
 
 const Index = () => {
-  const [items, setItems] = useState([])
+  const { items, category } = useContext(ItemsContext)
 
-  useEffect(() => {
-    axios.get('http://localhost:4001/menu-items')
-      .then(res => setItems(res.data.items))
-      .catch(e => console.error(e))
-  }, [])
+  const menuItems = category === 'all'
+    ? items : items.filter(item => item.category === category)
   return (
     <div>
-      hi
+      {menuItems
+        .map(item => <Item key={item.id} item={item} />)
+      }
     </div>
   )
 }
